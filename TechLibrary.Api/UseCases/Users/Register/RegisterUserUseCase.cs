@@ -17,7 +17,7 @@ namespace TechLibrary.Api.UseCases.Users.Register;
 
             Validate(request, dbContext);
 
-            var cryptography = new BCryptAlgorithme();
+            var cryptography = new BCryptAlgorithm();
 
             var entity = new User
             {

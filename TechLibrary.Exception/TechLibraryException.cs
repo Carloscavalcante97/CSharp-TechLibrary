@@ -2,8 +2,13 @@
 
 namespace TechLibrary.Exception
 {
-    public abstract class TechLIbraryException : SystemException
+    public abstract class TechLibraryException : SystemException
     {
+        protected TechLibraryException(string message) : base(message) 
+        {
+        
+        }
+  
         public abstract List<string> GetErrorMessages();
         public abstract HttpStatusCode GetStatusCode();
     }

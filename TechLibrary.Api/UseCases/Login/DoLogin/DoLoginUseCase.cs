@@ -19,7 +19,7 @@ namespace TechLibrary.Api.UseCases.Login.DoLogin
             {
                 throw new InvalidLoginException();
             }
-            var cryptography = new BCryptAlgorithme();
+            var cryptography = new BCryptAlgorithm();
 
             var passWordIsValid = cryptography.Verify(request.Password, entity);
 
@@ -27,7 +27,9 @@ namespace TechLibrary.Api.UseCases.Login.DoLogin
             {
                 throw new InvalidLoginException();
             }
+
             var tokenGenerator = new JwtTokenGenerator();
+
             return new ResponseRegisteredUserJson
             {
                 Name = entity.Name,

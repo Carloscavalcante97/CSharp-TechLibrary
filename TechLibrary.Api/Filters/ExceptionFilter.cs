@@ -9,7 +9,7 @@ namespace TechLibrary.Api.Filters
     {
         public void OnException(ExceptionContext context)
         {
-           if(context.Exception is TechLIbraryException techLIbraryException)
+           if(context.Exception is TechLibraryException techLIbraryException)
             {
                 context.HttpContext.Response.StatusCode =(int)techLIbraryException.GetStatusCode();
                 context.Result = new ObjectResult(new ResponseErrorMessagesJson
